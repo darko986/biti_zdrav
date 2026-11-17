@@ -53,22 +53,26 @@ npr. `git add README.md`, ako si i nju mijenjao. Kada nema novih izmjena,
 - `.openai/hosting.json` sadrži identitet postojećeg Sites sajta, a ne pristupni token.
 - `.gitignore` isključuje IntelliJ podešavanja, lokalne `.env` fajlove, zavisnosti, keš i ZIP arhive. Fajl koji je već praćen Gitom ne prestaje se pratiti dodavanjem u `.gitignore`.
 
-## Povezivanje s online repozitorijumom
+## GitHub repozitorijum
 
-Trenutno nije podešen udaljeni repozitorijum. Commitovi su sačuvani na ovom
-računaru; sami po sebi nisu online rezervna kopija i ne objavljuju sajt.
+Projekat je povezan s [darko986/biti_zdrav](https://github.com/darko986/biti_zdrav).
+Udaljeni repozitorijum se zove `origin` i koristi postojeći SSH pristup:
 
-Kada napraviš prazan repozitorijum na GitHubu ili GitLabu, kopiraj njegov URL.
-Za prvo povezivanje koristi naredbe ispod. `URL_REPOZITORIJUMA` je oznaka koju
-treba zamijeniti stvarnim URL-om, a ne doslovan tekst za unos:
-
-```sh
-git remote add origin URL_REPOZITORIJUMA
-git remote -v
-git push -u origin main
+```text
+git@github.com:darko986/biti_zdrav.git
 ```
 
-Ako udaljeni repozitorijum već ima fajlove ili Git prijavi različite istorije,
-prvo pregledaj i uskladi istorije; nemoj koristiti force push.
-Za kasnija slanja, nakon povezivanja i novih commitova, koristi `git push`.
-Slanje koda i objavljivanje sajta su odvojeni koraci.
+Početni GitHub commit i lokalna istorija spojeni su uz očuvanje obje istorije.
+Za slanje narednih commitova iz ovog foldera koristi:
+
+```sh
+git push
+```
+
+Za pregled stanja koristi `git status` i `git remote -v`. Kada radiš s drugog
+računara, podesi pristup svom GitHub nalogu i kloniraj repozitorijum. Prije
+novih izmjena preuzmi promjene naredbom `git pull --ff-only`, iz čistog radnog
+foldera. Ako Git prijavi razilaženje istorije, prvo pregledaj i uskladi promjene.
+
+Commit čuva promjene lokalno; push šalje commitove na GitHub. Slanje koda i
+objavljivanje sajta su odvojeni koraci.

@@ -1,5 +1,7 @@
 # BITI ZDRAV — sajt savjetovališta
 
+GitHub projekat: [darko986/biti_zdrav — Savjetovalište Šajinović](https://github.com/darko986/biti_zdrav).
+
 Premium minimalistički sajt na B/H/S ijekavici za odrasle, parove, djecu i adolescente. Naziv je BITI ZDRAV, Nebojša Šajinović, Doboj. Korisnik je potvrdio grad, telefon +387 65 419 801 i dostupnost online terapije uz susrete uživo.
 
 ## Pokretanje
