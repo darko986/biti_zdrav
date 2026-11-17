@@ -1,6 +1,6 @@
 # Projektna pravila — BITI ZDRAV
 
-- Sajt je koncept savjetovališta za odrasle, parove, djecu i adolescente. Potvrđeni naziv je BITI ZDRAV, Nebojša Šajinović, Doboj, telefon +387 65 419 801. Korisnik je potvrdio grad i telefon. Fotografija je ilustrativna; kvalifikacije, cijene i terapijske metode nisu potvrđene.
+- Sajt je koncept savjetovališta za odrasle, parove, djecu i adolescente. Potvrđeni naziv je BITI ZDRAV, Nebojša Šajinović, Doboj, telefon +387 65 419 801. Korisnik je potvrdio grad, telefon i dostupnost online terapije uz susrete uživo. Platforma za online razgovor nije potvrđena; ne izmišljaj naziv platforme. Fotografija je ilustrativna; kvalifikacije, cijene i terapijske metode nisu potvrđene.
 - Sadržaj piši prirodnom B/H/S ijekavicom i latinicom. Ne izmišljaj kvalifikacije, recenzije, dostupnost ili ishode liječenja.
 - Vizuelni pravac: premium minimalizam, topla krem i maslinasta paleta, prostran raspored i pristupačna tipografija.
 - Postojeći stack je statički HTML/CSS/JavaScript u `dist/`. Nema instalacije ni build koraka. Ne uvodi framework bez konkretne koristi; izbor tehnologije nije unaprijed ograničen na React ili Angular.

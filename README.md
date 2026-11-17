@@ -1,6 +1,6 @@
 # BITI ZDRAV — sajt savjetovališta
 
-Premium minimalistički sajt na B/H/S ijekavici za odrasle, parove, djecu i adolescente. Naziv je BITI ZDRAV, Nebojša Šajinović, Doboj. Korisnik je potvrdio grad i telefon +387 65 419 801.
+Premium minimalistički sajt na B/H/S ijekavici za odrasle, parove, djecu i adolescente. Naziv je BITI ZDRAV, Nebojša Šajinović, Doboj. Korisnik je potvrdio grad, telefon +387 65 419 801 i dostupnost online terapije uz susrete uživo.
 
 ## Pokretanje
 
@@ -26,7 +26,7 @@ Semantički HTML, CSS i mali vanilla JavaScript odgovaraju jednoj sadržajnoj st
 
 ## Šta još treba potvrditi
 
-Tačna adresa, kvalifikacije terapeuta, terapijske metode, cijene, trajanje, dostupnost, online/uživo rad, saglasnosti za maloljetnike i pravila privatnosti. Fotografiju zamijeniti autentičnom kada bude dostupna. Telefon je aktivan tel link, a Facebook vodi na korisnikov potvrđeni profil. Nema izmišljenih biografija, recenzija ili automatskog zakazivanja.
+Tačna adresa, kvalifikacije terapeuta, terapijske metode, cijene, trajanje, dostupnost termina, platforma za online susrete, saglasnosti za maloljetnike i pravila privatnosti. Fotografiju zamijeniti autentičnom kada bude dostupna. Telefon je aktivan tel link, a Facebook vodi na korisnikov potvrđeni profil. Nema izmišljenih biografija, recenzija ili automatskog zakazivanja.
 
 Radna verzija ima `noindex,nofollow`. Prije javnog lansiranja treba potvrditi poslovne podatke, kontakt i privatnost, zatim ukloniti noindex, dodati canonical i sitemap za konačni domen. Nije aktiviran backend ili slanje podataka.
 
