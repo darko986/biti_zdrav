@@ -10,6 +10,8 @@ python3 -m http.server 4173 --directory dist
 
 Otvorite http://localhost:4173. Nije potrebna instalacija zavisnosti ni build. Provjera JavaScripta: `node --check dist/app.js`.
 
+U IntelliJ-u otvorite folder `prostor` kao korijen projekta. Za lokalni pregled potreban je Python 3, a za provjeru JavaScripta Node.js. Uputstvo za pregled izmjena, commitove i povezivanje s udaljenim repozitorijumom je u [GIT.md](GIT.md). Folder `dist/` sadrži izvorne fajlove i prati se u Gitu.
+
 ## Vizuelni identitet
 
 Primijenjen je korisnikov originalni znak iz `dist/assets/biti-zdrav-brand.jpg`: zaglavlje, sekcija pristupa, podnožje, favicon i Open Graph slika. Paleta koristi zlato #b6974c, antracit #24231f i krem #f7f3ea; tamnije zlato #87652d služi za čitljive tekstualne akcente. Originalna JPG slika nije mijenjana.
