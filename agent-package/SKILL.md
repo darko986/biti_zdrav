@@ -15,7 +15,7 @@ Piši prirodnom B/H/S ijekavicom i latinicom. Ton: pažljiv, topao i nenametljiv
 
 Biraj sekcije koje pomažu odluci: kome je podrška namijenjena, pristup, potvrđen profil stručnjaka, prvi susret, praktična pitanja i kontakt. Ne dodaj prazan profil terapeuta radi popunjavanja prostora. Za maloljetnike traži potvrđene informacije o roditeljskoj ulozi, saglasnosti i granicama povjerljivosti.
 
-Premium minimalizam znači smirene krem i maslinaste tonove, jasnu hijerarhiju, prostranu kompoziciju i čitljivu tipografiju. Izbjegavaj pretjerane kartice, marketinške značke i animacije koje ometaju čitanje.
+Premium minimalizam znači krem podlogu, zlatne akcente i antracit prema dostavljenom zaštitnom znaku, jasnu hijerarhiju, prostranu kompoziciju i čitljivu tipografiju. Sačuvaj originalni znak bez precrtavanja i deformacije. Svijetlo zlato koristi za detalje i podloge, a tamniju nijansu za tekst na krem podlozi. Izbjegavaj pretjerane kartice, marketinške značke i animacije koje ometaju čitanje.
 
 ## Razvoj i pristupačnost
 CTA mora opisivati stvarnu funkciju. Bez kontakta ili backend integracije ne prikazuj uspjeh slanja niti aktivno zakazivanje. Koristi semantičke elemente, jedan h1, povezane labele, vidljiv fokus, podršku tastaturi i povrat fokusa iz dijaloga. Provjeri male ekrane, dugačak tekst, otvaranje i zatvaranje menija, FAQ i dijaloge. Uvaži prefers-reduced-motion. Ne ugrađuj javno korisničke ili tajne podatke.

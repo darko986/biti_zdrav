@@ -10,6 +10,10 @@ python3 -m http.server 4173 --directory dist
 
 Otvorite http://localhost:4173. Nije potrebna instalacija zavisnosti ni build. Provjera JavaScripta: `node --check dist/app.js`.
 
+## Vizuelni identitet
+
+Primijenjen je korisnikov originalni znak iz `dist/assets/biti-zdrav-brand.jpg`: zaglavlje, sekcija pristupa, podnožje, favicon i Open Graph slika. Paleta koristi zlato #b6974c, antracit #24231f i krem #f7f3ea; tamnije zlato #87652d služi za čitljive tekstualne akcente. Originalna JPG slika nije mijenjana.
+
 ## Izbor stacka
 
 Semantički HTML, CSS i mali vanilla JavaScript odgovaraju jednoj sadržajnoj stranici s mobilnom navigacijom, FAQ sekcijom i dijalozima. Nema klijentskog frameworka, vanjskih fontova, analitike niti kontakt podataka koji se šalju trećim servisima. Budući CMS ili sistem zakazivanja može se dodati prema stvarnim potrebama; Angular i React nisu unaprijed nametnuti.
@@ -23,6 +27,10 @@ Semantički HTML, CSS i mali vanilla JavaScript odgovaraju jednoj sadržajnoj st
 - `agent-package/`: tražene četiri datoteke za Codex agenta i vještinu.
 - `AGENTS.md`: pravila za održavanje ovog projekta.
 - `.openai/hosting.json`: identitet i statička konfiguracija privatnog Sites sajta.
+
+## Podaci s Facebook stranice
+
+Dodana je sekcija predstavljanja savjetovališta i oznaka „Psiholog”, prema javnoj kategoriji njegove Facebook stranice. Kratak opis pogleda na dobrobit parafrazira objavu od 29. novembra 2022. Izvori, datum provjere i ograničenja su u `SOURCES.md`. Online susreti ostaju podatak koji je prethodno potvrdio korisnik.
 
 ## Šta još treba potvrditi
 
