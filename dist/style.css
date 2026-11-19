@@ -17,3 +17,38 @@
 .about-links .text-link{margin-top:0;font-size:13px;gap:14px}
 @media(max-width:1050px){.about{gap:40px}}
 @media(max-width:760px){.about{grid-template-columns:1fr;gap:28px}.about-links{gap:20px}.about-copy>p{font-size:16px}}
+
+/* Profile and appointment preferences: no availability is implied. */
+[hidden]{display:none!important}
+.profile-facts{margin:28px 0;border-block:1px solid var(--line)}
+.profile-facts>div{display:grid;grid-template-columns:160px 1fr;gap:20px;padding:14px 0}
+.profile-facts>div+div{border-top:1px solid var(--line)}
+.profile-facts dt{font-size:14px;color:var(--muted)}
+.profile-facts dd{margin:0;font-size:16px}
+.booking{display:grid;grid-template-columns:1fr 1.15fr;gap:70px;border-top:1px solid var(--line)}
+.booking-intro>p:not(.eyebrow){font-size:16px;color:var(--muted);max-width:440px;margin-top:26px}
+.booking-intro .booking-note{padding-left:18px;border-left:2px solid #b6974c}
+.booking-intro .text-link{font-size:14px;gap:0}
+.booking-form{background:var(--sage);padding:32px;border:1px solid var(--line);border-radius:6px;min-width:0}
+.booking-form fieldset{padding:0;border:0;margin:0 0 28px;min-width:0}
+.booking-form legend,.booking-form label{font-size:16px}
+.booking-form legend{margin-bottom:14px}
+.meeting-options{display:flex;gap:14px;flex-wrap:wrap}
+.meeting-options label{display:flex;align-items:center;gap:9px;padding:12px 16px;border:1px solid #b5a586;border-radius:4px;background:var(--paper);cursor:pointer}
+.meeting-options input{accent-color:#87652d;width:18px;height:18px;margin:0}
+.booking-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.booking-fields label{display:flex;flex-direction:column;gap:8px;min-width:0}
+.booking-fields input,.appointment-result textarea{font:16px/1.6 Arial,sans-serif;color:var(--ink);background:var(--paper);border:1px solid #9f9078;border-radius:4px;padding:12px;width:100%;min-width:0}
+.booking-form :is(input,textarea):focus-visible{outline:3px solid #87652d;outline-offset:3px}
+.booking-form .field-help{font-size:14px;color:#595247;line-height:1.6;margin:15px 0 22px}
+.booking-form .button,.about-links .button{font-size:14px}
+.appointment-result{margin-top:28px;padding-top:24px;border-top:1px solid #b5a586}
+.appointment-result textarea{margin-top:10px;resize:vertical;min-height:230px}
+.booking-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+.booking-actions .text-link{margin:0;font-size:14px}
+.booking-form #appointment-status{margin-bottom:0}
+.contact-info .facebook-link{font-size:14px;overflow-wrap:anywhere}
+.about-links .text-link{font-size:14px}
+@media(max-width:1050px){.booking{gap:35px}.booking-form{padding:24px}.booking-fields{grid-template-columns:1fr}}
+@media(max-width:760px){.booking{grid-template-columns:1fr;gap:30px}.booking-form{padding:24px 20px}.profile-facts>div{grid-template-columns:1fr;gap:4px}.meeting-options{flex-direction:column}.booking-actions{align-items:stretch;flex-direction:column}.booking-actions .button{justify-content:center}.booking-actions .text-link{align-self:start}}
+.about-copy>.profile-source{font-size:14px;line-height:1.6}

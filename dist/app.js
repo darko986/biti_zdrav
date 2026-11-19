@@ -18,7 +18,7 @@ const content = document.querySelector('#dialog-content');
 function showInfo(kind) {
   if (kind === 'privacy') {
     title.textContent = 'Vaša privatnost';
-    content.innerHTML = '<p>Ova radna verzija nema kontakt formu, analitiku ni oglasne alate. Ne traži lične ili zdravstvene podatke i ne čuva odabire u pregledniku.</p><p>Fotografija i svi elementi stranice učitavaju se s istog sajta. Hosting servis može obrađivati tehničke podatke potrebne za isporuku stranice.</p><p>Pozivanje telefonskog broja otvara vašu aplikaciju za pozive. Facebook link vodi na drugi sajt, čija pravila privatnosti važe nakon otvaranja. Za informacije o obradi podataka u samom savjetovalištu obratite se Nebojši Šajinoviću.</p>';
+    content.innerHTML = '<p>Obrazac za dogovor priprema poruku samo na ovoj stranici. Odabrani datum, vrijeme i način susreta ne šalju se serveru i ne spremaju u lokalnu pohranu. Ne tražimo zdravstvene podatke. Sajt nema analitiku ni oglasne alate.</p><p>Kopiranje stavlja pripremljeni tekst u vaš međuspremnik. Ako je email kontakt dostupan, email link otvara vašu aplikaciju za poštu; poruku pregledate i sami šaljete. Instagram i Facebook otvaraju druge sajtove na kojima važe njihova pravila privatnosti.</p><p>Fotografije i elementi stranice učitavaju se s istog sajta. Hosting servis može obrađivati tehničke podatke potrebne za isporuku stranice. Za informacije o obradi podataka u savjetovalištu obratite se Nebojši Šajinoviću.</p>';
   } else {
     title.textContent = 'Dođite onako kako jeste.';
     content.innerHTML = '<p>Ne postoji savršena priprema za prvi razgovor. Ako vam pomaže, možete razmisliti o nekoliko pitanja:</p><ul><li>Šta me je navelo da potražim razgovor baš sada?</li><li>Šta bih želio ili željela bolje razumjeti?</li><li>Šta mi je važno da znam o načinu rada?</li></ul><p>Ove odgovore možete zadržati za sebe do susreta. Nema potrebe da šaljete osjetljive detalje u početnom upitu.</p>';
@@ -29,3 +29,63 @@ document.querySelector('#prepare-button').addEventListener('click', () => showIn
 document.querySelector('#privacy-button').addEventListener('click', () => showInfo('privacy'));
 dialog.querySelectorAll('.close-button, .dialog-done').forEach(button => button.addEventListener('click', () => dialog.close()));
 dialog.addEventListener('click', event => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if(event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close(); } });
+
+// Set only to the practice's confirmed public contact address.
+const practiceEmail = '';
+const appointmentForm = document.querySelector('#appointment-form');
+const appointmentDate = document.querySelector('#appointment-date');
+const appointmentTime = document.querySelector('#appointment-time');
+const appointmentResult = document.querySelector('#appointment-result');
+const appointmentMessage = document.querySelector('#appointment-message');
+const appointmentStatus = document.querySelector('#appointment-status');
+const appointmentEmail = document.querySelector('#appointment-email');
+function sarajevoNow() {
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Sarajevo', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).map(part => [part.type, part.value]));
+  return { date: `${parts.year}-${parts.month}-${parts.day}`, time: `${parts.hour}:${parts.minute}` };
+}
+function emailLink(body) {
+  return `mailto:${practiceEmail}?subject=${encodeURIComponent('Upit za prvi razgovor — BITI ZDRAV')}&body=${encodeURIComponent(body)}`;
+}
+appointmentDate.min = sarajevoNow().date;
+if (practiceEmail) {
+  const contactEmail = document.querySelector('#contact-email');
+  contactEmail.textContent = practiceEmail;
+  contactEmail.href = emailLink('Poštovani,\n\nŽelio/željela bih dogovoriti prvi razgovor. Molim vas za informacije o dostupnim terminima.\n\nSrdačan pozdrav');
+  contactEmail.hidden = false;
+  appointmentEmail.hidden = false;
+  document.querySelector('#delivery-help').textContent = 'Otvorite pripremljenu poruku u svojoj email aplikaciji, pregledajte je i pošaljite. Možete je i kopirati. Otvaranje emaila ne šalje poruku niti rezerviše termin.';
+}
+appointmentForm.addEventListener('input', () => {
+  appointmentDate.setCustomValidity('');
+  appointmentTime.setCustomValidity('');
+  appointmentResult.hidden = true;
+  appointmentStatus.textContent = '';
+});
+appointmentForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const now = sarajevoNow();
+  appointmentDate.min = now.date;
+  appointmentDate.setCustomValidity(appointmentDate.value < now.date ? 'Izaberite današnji ili budući datum.' : '');
+  appointmentTime.setCustomValidity(appointmentDate.value === now.date && appointmentTime.value <= now.time ? 'Izaberite vrijeme koje tek dolazi.' : '');
+  if (!appointmentForm.reportValidity()) return;
+  const [year, month, day] = appointmentDate.value.split('-');
+  const meeting = new FormData(appointmentForm).get('meeting');
+  appointmentMessage.value = `Poštovani,\n\nŽelio/željela bih dogovoriti prvi razgovor.\nNačin susreta: ${meeting}.\nOdgovarao bi mi ${day}.${month}.${year}. u ${appointmentTime.value} (vrijeme u Doboju, Europe/Sarajevo).\n\nMolim vas da potvrdite dostupnost ili predložite drugi termin, te navedete trajanje i cijenu susreta.\n\nSrdačan pozdrav`;
+  if (practiceEmail) appointmentEmail.href = emailLink(appointmentMessage.value);
+  appointmentResult.hidden = false;
+  appointmentStatus.textContent = 'Poruka je pripremljena. Još nije poslata; termin čeka dogovor.';
+  appointmentMessage.focus();
+});
+document.querySelector('#copy-message').addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(appointmentMessage.value);
+    appointmentStatus.textContent = 'Poruka je kopirana. Zalijepite je u poruku savjetovalištu i pošaljite.';
+  } catch {
+    appointmentMessage.focus();
+    appointmentMessage.select();
+    appointmentStatus.textContent = 'Tekst je označen. Kopirajte ga ručno i pošaljite savjetovalištu.';
+  }
+});

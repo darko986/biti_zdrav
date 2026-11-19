@@ -20,3 +20,9 @@ U objavi se naziv BITI ZDRAV povezuje s emocionalnom, psihičkom, društvenom, f
 - U pregledanim informacijama nisu pronađeni ulica i broj, cijene, trajanje susreta, konkretne edukacije, licence ni platforma za online susrete.
 - Nisu preuzimane fotografije posjetilaca, komentari, recenzije niti biografski detalji iz nepovezanih medijskih članaka.
 - Originalni logo ostaje korisnikov dostavljeni materijal; fotografija enterijera ostaje označena kao ilustrativna.
+
+## Materijal dostavljen 19. novembra 2026.
+
+Korisnik je dostavio Instagram nalog https://www.instagram.com/savjetovaliste_sajinovic/ i snimak Facebook objave od 1. decembra 2023. (`Screenshot 2026-11-19 at 16.53.08.png`). Na slici piše „Psiholog i psihoterapeut pod supervizijom”, navedene su oblasti individualnog, porodičnog i bračnog savjetovanja i druge teme podrške. Tekst uz objavu navodi online susrete preko Vibera, Zooma i WhatsAppa.
+
+Predstavljanje je prošireno parafrazom tih podataka. Status supervizije i platforme su vremenski vezani za objavu iz 2023, bez tvrdnje o aktuelnoj licenci, završenim edukacijama ili dostupnosti termina. Potvrđena email adresa još nije dostavljena.
