@@ -28,3 +28,5 @@ Korisnik je dostavio Instagram nalog https://www.instagram.com/savjetovaliste_sa
 Predstavljanje je prošireno parafrazom tih podataka. Status supervizije i platforme su vremenski vezani za objavu iz 2023, bez tvrdnje o aktuelnoj licenci, završenim edukacijama ili dostupnosti termina. Potvrđena email adresa još nije dostavljena.
 
 20. novembra 2026. oblasti rada sa dostavljene slike razvrstane su u četiri pregledne grupe. Željena online platforma je izbor klijenta za naknadni dogovor, bez automatskog stvaranja sastanka. Korisnik je tražio da email ostane za kasnije.
+
+Na zahtjev korisnika biografski uvod je preoblikovan u direktno predstavljanje Nebojše, bez prepričavanja objave i upućivanja posjetilaca da se raspituju o obrazovanju. U biografiji se navode samo postojeći podaci o zanimanju, savjetovalištu, populacijama i oblastima rada. Nisu dodati fakultet, diplome, licence, godine iskustva niti tvrdnja o aktuelnom statusu supervizije. Istorijski izvor ostaje dokumentovan ovdje i uz detaljan pregled oblasti rada.
