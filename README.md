@@ -38,7 +38,7 @@ Dodana je sekcija predstavljanja savjetovališta i oznaka „Psiholog”, prema 
 
 ## Šta još treba potvrditi
 
-Tačna adresa, kvalifikacije terapeuta, terapijske metode, cijene, trajanje, dostupnost termina, platforma za online susrete, saglasnosti za maloljetnike i pravila privatnosti. Fotografiju zamijeniti autentičnom kada bude dostupna. Telefon je aktivan tel link, a Facebook vodi na korisnikov potvrđeni profil. Nema izmišljenih biografija, recenzija ili automatskog zakazivanja. Obrazac priprema prijedlog za naknadni dogovor.
+Tačna adresa, kvalifikacije terapeuta, terapijske metode, cijene, trajanje, dostupnost termina, aktuelni izbor platforme za online susrete, saglasnosti za maloljetnike i pravila privatnosti. Fotografiju zamijeniti autentičnom kada bude dostupna. Telefon je aktivan tel link, a Facebook vodi na korisnikov potvrđeni profil. Nema izmišljenih biografija, recenzija ili automatskog zakazivanja. Obrazac priprema prijedlog za naknadni dogovor.
 
 Radna verzija ima `noindex,nofollow`. Prije javnog lansiranja treba potvrditi poslovne podatke, kontakt i privatnost, zatim ukloniti noindex, dodati canonical i sitemap za konačni domen. Nije aktiviran backend ili slanje podataka.
 
@@ -48,6 +48,8 @@ Instalacija i prvi prompt nalaze se u `agent-package/README.md`. Paket ne zahtij
 
 Sekcija „S kim razgovarate” dopunjena je iz dostavljenog snimka objave iz 2023; status supervizije je naveden uz datum izvora. Instagram je povezan u predstavljanju, kontaktu i podnožju.
 
-Obrazac lokalno priprema poruku s načinom susreta, željenim datumom i vremenom u zoni `Europe/Sarajevo`. Prošli datumi i proteklo vrijeme za današnji dan nisu prihvaćeni. Obrazac ne prikazuje raspoloživost, ne rezerviše termin, ne stvara video sastanak i ne šalje podatke serveru. Posjetilac kopira poruku i šalje je sam.
+Obrazac lokalno priprema poruku s načinom susreta, željenim datumom i vremenom u zoni `Europe/Sarajevo`. Za online razgovor moguće je navesti željenu platformu (Viber, Zoom, WhatsApp ili prema dogovoru); ona se uključuje u pripremljenu poruku. Prošli datumi i proteklo vrijeme za današnji dan nisu prihvaćeni. Obrazac ne prikazuje raspoloživost, ne rezerviše termin, ne stvara video sastanak i ne šalje podatke serveru. Posjetilac kopira poruku i šalje je sam.
 
 Za aktiviranje email linka unesite potvrđenu javnu adresu savjetovališta u `practiceEmail` u `dist/app.js`. Tada se prikazuju kontakt email i dugme za otvaranje email aplikacije s pripremljenim predmetom i tekstom. Dok adresa nije potvrđena, email akcije su skrivene. Za automatsko zakazivanje potreban je stvarni kalendar savjetovališta i potvrđena pravila raspoloživosti.
+
+Dopuna 20. novembra 2026: pregled oblasti rada proširen je prema dostavljenoj slici, dodan je direktan pristup dogovoru iz menija i objašnjenje potvrde termina u FAQ-u. Korisnik je izričito odložio unos email adrese za kasnije.

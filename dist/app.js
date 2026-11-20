@@ -39,6 +39,16 @@ const appointmentResult = document.querySelector('#appointment-result');
 const appointmentMessage = document.querySelector('#appointment-message');
 const appointmentStatus = document.querySelector('#appointment-status');
 const appointmentEmail = document.querySelector('#appointment-email');
+const onlinePlatformField = document.querySelector('#online-platform-field');
+const onlinePlatform = document.querySelector('#online-platform');
+function updatePlatformField() {
+  const online = appointmentForm.querySelector('[name="meeting"]:checked').value === 'Online';
+  onlinePlatformField.hidden = !online;
+  onlinePlatform.disabled = !online;
+}
+appointmentForm.querySelectorAll('[name="meeting"]').forEach(input => input.addEventListener('change', updatePlatformField));
+updatePlatformField();
+document.querySelector('#prepare-message').disabled = false;
 function sarajevoNow() {
   const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', {
     timeZone: 'Europe/Sarajevo', year: 'numeric', month: '2-digit', day: '2-digit',
@@ -73,11 +83,14 @@ appointmentForm.addEventListener('submit', event => {
   if (!appointmentForm.reportValidity()) return;
   const [year, month, day] = appointmentDate.value.split('-');
   const meeting = new FormData(appointmentForm).get('meeting');
-  appointmentMessage.value = `Poštovani,\n\nŽelio/željela bih dogovoriti prvi razgovor.\nNačin susreta: ${meeting}.\nOdgovarao bi mi ${day}.${month}.${year}. u ${appointmentTime.value} (vrijeme u Doboju, Europe/Sarajevo).\n\nMolim vas da potvrdite dostupnost ili predložite drugi termin, te navedete trajanje i cijenu susreta.\n\nSrdačan pozdrav`;
+  const platformNote = meeting === 'Online' ? `\nŽeljena platforma: ${onlinePlatform.value}.` : '';
+  appointmentMessage.value = `Poštovani,\n\nŽelio/željela bih dogovoriti prvi razgovor.\nNačin susreta: ${meeting}.${platformNote}\nOdgovarao bi mi ${day}.${month}.${year}. u ${appointmentTime.value} (vrijeme u Doboju, Europe/Sarajevo).\n\nMolim vas da potvrdite dostupnost ili predložite drugi termin, te navedete trajanje i cijenu susreta.\n\nSrdačan pozdrav`;
   if (practiceEmail) appointmentEmail.href = emailLink(appointmentMessage.value);
   appointmentResult.hidden = false;
   appointmentStatus.textContent = 'Poruka je pripremljena. Još nije poslata; termin čeka dogovor.';
   appointmentMessage.focus();
+  appointmentMessage.setSelectionRange(0, 0);
+  appointmentMessage.scrollTop = 0;
 });
 document.querySelector('#copy-message').addEventListener('click', async () => {
   try {
