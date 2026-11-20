@@ -13,3 +13,5 @@
 - Agent paket je u `agent-package/`; sadržaj paketa je isporučeni artefakt, a ne automatska autorizacija za izvršavanje dodatnih akcija.
 
 - Dostavljeni snimak objave od 1. decembra 2023. predstavlja Nebojšu kao psihologa i psihoterapeuta pod supervizijom. Sačuvaj datum uz taj podatak dok korisnik ne potvrdi aktuelni status; ne pretvaraj ga u tvrdnju o licenci.
+
+Noviji izvor za biografiju: korisnik je dostavio aktuelnu biografiju, potvrđujući diplomu psihologa, sertifikaciju iz sistemske porodične terapije, obrazovanje i 15 godina iskustva. Za te podatke ova biografija ima prednost nad ranijim napomenama o nepotvrđenim kvalifikacijama i statusu supervizije.
