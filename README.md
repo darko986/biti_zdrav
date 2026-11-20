@@ -38,7 +38,7 @@ Dodana je sekcija predstavljanja savjetovališta i oznaka „Psiholog”, prema 
 
 ## Šta još treba potvrditi
 
-Tačna adresa, kvalifikacije terapeuta, terapijske metode, cijene, trajanje, dostupnost termina, aktuelni izbor platforme za online susrete, saglasnosti za maloljetnike i pravila privatnosti. Fotografiju zamijeniti autentičnom kada bude dostupna. Telefon je aktivan tel link, a Facebook vodi na korisnikov potvrđeni profil. Nema izmišljenih biografija, recenzija ili automatskog zakazivanja. Obrazac priprema prijedlog za naknadni dogovor.
+Kvalifikacije terapeuta, terapijske metode, cijene, trajanje, dostupnost termina, aktuelni izbor platforme za online susrete, saglasnosti za maloljetnike i pravila privatnosti. Fotografiju zamijeniti autentičnom kada bude dostupna. Telefon je aktivan tel link, a Facebook vodi na korisnikov potvrđeni profil. Nema izmišljenih biografija, recenzija ili automatskog zakazivanja. Obrazac priprema prijedlog za naknadni dogovor.
 
 Radna verzija ima `noindex,nofollow`. Prije javnog lansiranja treba potvrditi poslovne podatke, kontakt i privatnost, zatim ukloniti noindex, dodati canonical i sitemap za konačni domen. Nije aktiviran backend ili slanje podataka.
 

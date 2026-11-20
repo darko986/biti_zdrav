@@ -30,3 +30,5 @@ Predstavljanje je prošireno parafrazom tih podataka. Status supervizije i platf
 20. novembra 2026. oblasti rada sa dostavljene slike razvrstane su u četiri pregledne grupe. Željena online platforma je izbor klijenta za naknadni dogovor, bez automatskog stvaranja sastanka. Korisnik je tražio da email ostane za kasnije.
 
 Na zahtjev korisnika biografski uvod je preoblikovan u direktno predstavljanje Nebojše, bez prepričavanja objave i upućivanja posjetilaca da se raspituju o obrazovanju. U biografiji se navode samo postojeći podaci o zanimanju, savjetovalištu, populacijama i oblastima rada. Nisu dodati fakultet, diplome, licence, godine iskustva niti tvrdnja o aktuelnom statusu supervizije. Istorijski izvor ostaje dokumentovan ovdje i uz detaljan pregled oblasti rada.
+
+Korisnik je potvrdio adresu kancelarije za susrete uživo: Cara Dušana 11/98, Garden 1, Doboj. Dugme „Kako do nas” koristi ovu adresu kao odredište u Google mapama.
