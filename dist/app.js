@@ -64,16 +64,13 @@ if (practiceEmail) {
   const contactEmail = document.querySelector('#contact-email');
   contactEmail.href = '#dogovor';
   contactEmail.textContent = 'Pripremite email za dogovor termina';
-  const fields = document.querySelector('#email-contact-fields');
-  fields.hidden = false;
-  fields.disabled = false;
   document.querySelector('#prepare-message').textContent = 'Otvori pripremljeni email';
   contactEmail.hidden = false;
   appointmentEmail.hidden = false;
   document.querySelector('#delivery-help').textContent = 'Otvorite pripremljenu poruku u svojoj email aplikaciji, pregledajte je i pošaljite. Možete je i kopirati. Otvaranje emaila ne šalje poruku niti rezerviše termin.';
 }
 appointmentForm.addEventListener('input', () => {
-  if (practiceEmail) appointmentForm.elements.phone.setCustomValidity('');
+  appointmentForm.elements.phone.setCustomValidity('');
   appointmentDate.setCustomValidity('');
   appointmentTime.setCustomValidity('');
   appointmentResult.hidden = true;
@@ -86,18 +83,16 @@ appointmentForm.addEventListener('submit', event => {
   appointmentDate.setCustomValidity(appointmentDate.value < now.date ? 'Izaberite današnji ili budući datum.' : '');
   appointmentTime.setCustomValidity(appointmentDate.value === now.date && appointmentTime.value <= now.time ? 'Izaberite vrijeme koje tek dolazi.' : '');
   const data = new FormData(appointmentForm);
-  if (practiceEmail) {
-    const digits = data.get('phone').replace(/\D/g, '');
-    appointmentForm.elements.phone.setCustomValidity(digits.length < 6 ? 'Unesite broj telefona s pozivnim brojem.' : '');
-  }
+  const digits = data.get('phone').replace(/\D/g, '');
+  appointmentForm.elements.phone.setCustomValidity(digits.length < 6 ? 'Unesite broj telefona s pozivnim brojem.' : '');
   if (!appointmentForm.reportValidity()) return;
   const [year, month, day] = appointmentDate.value.split('-');
   const meeting = data.get('meeting');
   const platformNote = meeting === 'Online' ? `\nŽeljena platforma: ${onlinePlatform.value}.` : '';
   appointmentMessage.value = `Poštovani,\n\nŽelio/željela bih dogovoriti prvi razgovor.\nNačin susreta: ${meeting}.${platformNote}\nOdgovarao bi mi ${day}.${month}.${year}. u ${appointmentTime.value} (vrijeme u Doboju, Europe/Sarajevo).\n\nMolim vas da potvrdite dostupnost ili predložite drugi termin, te navedete trajanje i cijenu susreta.\n\nSrdačan pozdrav`;
+  const fullName = [data.get('firstName'), data.get('lastName')].map(value => value.trim()).join(' ');
+  appointmentMessage.value += `,\n${fullName}\nEmail za odgovor: ${data.get('replyEmail').trim()}\nTelefon: ${data.get('phone').trim()}`;
   if (practiceEmail) {
-    const fullName = [data.get('firstName'), data.get('lastName')].map(value => value.trim()).join(' ');
-    appointmentMessage.value += `,\n${fullName}\nEmail za odgovor: ${data.get('replyEmail').trim()}\nTelefon: ${data.get('phone').trim()}`;
     appointmentEmail.href = emailLink(appointmentMessage.value);
     window.location.href = appointmentEmail.href;
   }
