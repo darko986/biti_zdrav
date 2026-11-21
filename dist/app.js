@@ -31,7 +31,7 @@ dialog.querySelectorAll('.close-button, .dialog-done').forEach(button => button.
 dialog.addEventListener('click', event => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if(event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close(); } });
 
 // Set only to the practice's confirmed public contact address.
-const practiceEmail = '';
+const practiceEmail = 'savjetovalistesajinovic@gmail.com';
 const appointmentForm = document.querySelector('#appointment-form');
 const appointmentDate = document.querySelector('#appointment-date');
 const appointmentTime = document.querySelector('#appointment-time');
@@ -62,8 +62,8 @@ function emailLink(body) {
 appointmentDate.min = sarajevoNow().date;
 if (practiceEmail) {
   const contactEmail = document.querySelector('#contact-email');
-  contactEmail.href = '#dogovor';
-  contactEmail.textContent = 'Pripremite email za dogovor termina';
+  contactEmail.href = `mailto:${practiceEmail}`;
+  contactEmail.textContent = practiceEmail;
   document.querySelector('#prepare-message').textContent = 'Otvori pripremljeni email';
   contactEmail.hidden = false;
   appointmentEmail.hidden = false;
@@ -89,7 +89,7 @@ appointmentForm.addEventListener('submit', event => {
   const [year, month, day] = appointmentDate.value.split('-');
   const meeting = data.get('meeting');
   const platformNote = meeting === 'Online' ? `\nŽeljena platforma: ${onlinePlatform.value}.` : '';
-  appointmentMessage.value = `Poštovani,\n\nŽelio/željela bih dogovoriti prvi razgovor.\nNačin susreta: ${meeting}.${platformNote}\nOdgovarao bi mi ${day}.${month}.${year}. u ${appointmentTime.value} (vrijeme u Doboju, Europe/Sarajevo).\n\nMolim vas da potvrdite dostupnost ili predložite drugi termin, te navedete trajanje i cijenu susreta.\n\nSrdačan pozdrav`;
+  appointmentMessage.value = `Poštovani,\n\nŽelio/željela bih dogovoriti prvi razgovor.\nNačin susreta: ${meeting}.${platformNote}\nOdgovarao bi mi ${day}.${month}.${year}. u ${appointmentTime.value} (vrijeme u Doboju, Europe/Sarajevo).\n\nMolim vas da potvrdite dostupnost ili predložite drugi termin.\n\nSrdačan pozdrav`;
   const fullName = [data.get('firstName'), data.get('lastName')].map(value => value.trim()).join(' ');
   appointmentMessage.value += `,\n${fullName}\nEmail za odgovor: ${data.get('replyEmail').trim()}\nTelefon: ${data.get('phone').trim()}`;
   if (practiceEmail) {
