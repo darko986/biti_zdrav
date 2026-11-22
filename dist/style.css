@@ -129,3 +129,14 @@
 .support-card>p{margin:0 0 18px;min-height:0;max-width:none}
 .support-card>.service-details,.support-card>a{margin-top:0}
 .support-card>a,.support-card summary{font-size:14px}
+
+.service-details summary{align-items:flex-start;gap:8px}
+.service-details summary span{flex:none;line-height:1.1}
+@media(min-width:1024px){
+  .support.wrap{width:min(1600px,calc(100% - 32px))}
+  .support-grid{grid-template-columns:repeat(7,minmax(140px,1fr));column-gap:0;overflow-x:auto}
+  .support-grid .support-card{padding-inline:10px;border-inline-start:1px solid var(--line)}
+  .support-grid .support-card:first-child{border-inline-start:0}
+  .support-card h3{font-size:clamp(18px,1.55vw,25px)}
+  .service-details summary{gap:4px;overflow-wrap:anywhere}
+}
