@@ -67,7 +67,7 @@
 .button:disabled{opacity:.6;cursor:not-allowed;transform:none}
 @media(max-width:760px){.topic-grid{grid-template-columns:1fr}}
 
-.support-company{background:linear-gradient(105deg,#e5d4a6,#f4ecd9)}
+.support-company,.therapy-goals{background:linear-gradient(105deg,#e5d4a6,#f4ecd9)}
 @media(max-width:760px){.support-card.support-company{padding-inline:14px}}
 .bio-detail h3{font:23px/1.3 var(--serif);margin:24px 0 10px}.bio-detail p{font-size:16px;line-height:1.75;max-width:65ch;padding:0;margin:0 0 16px}
 
@@ -107,13 +107,12 @@
 .work-topics strong{color:var(--ink)}
 @media(max-width:760px){.work-areas{grid-template-columns:1fr}.work-areas .work-photo{max-width:360px}}
 
-.company-programs{width:min(74ch,calc(100% - 40px));margin:0 auto clamp(48px,7vw,96px);font-size:17px;line-height:1.7}
-.company-programs h2{max-width:24ch}
+.company-programs{min-width:0;overflow-wrap:break-word}
+.company-programs h4{font:20px/1.3 var(--serif);margin:12px 0}
 .company-programs details{border-top:1px solid var(--line)}
-.company-programs summary{font-size:17px;gap:12px}
-.company-programs details p{font-size:inherit;padding:0;margin:0 0 12px}
-.company-programs ul{padding-left:1.3em;margin:0 0 20px}
+.company-programs ul{font-size:15px;padding-left:1.2em;margin:0 0 16px}
 .company-programs li+li{margin-top:8px}
+.company-programs details:not([open])>summary span{transform:none}
 
 .support-grid{gap:0 1rem;border-top:0}
 .support-grid .support-card{
@@ -140,3 +139,16 @@
   .support-card h3{font-size:clamp(18px,1.55vw,25px)}
   .service-details summary{gap:4px;overflow-wrap:anywhere}
 }
+
+.portrait-quote{max-width:480px;margin:24px 0 0;padding-inline-start:18px;border-inline-start:2px solid #b6974c;color:#805f29;font:italic clamp(19px,1.45vw,23px)/1.5 var(--serif)}
+.portrait-quote blockquote{margin:0}
+.portrait-quote figcaption{margin-top:10px;font-size:.9em}
+@media(max-width:760px){.portrait-quote{max-width:360px}}
+
+.therapy-goals{margin-top:clamp(28px,5vw,64px);padding:clamp(20px,4vw,48px);border-inline-start:3px solid #b6974c;color:var(--ink)}
+.therapy-goals h3{margin:0 0 20px;font:clamp(24px,2.5vw,36px)/1.2 var(--serif)}
+.therapy-goals figure,.therapy-goals blockquote{margin:0}
+.therapy-goals ul{max-width:72ch;margin:0;padding-inline-start:1.3em;font-size:17px;line-height:1.65}
+.therapy-goals li+li{margin-top:.6em}
+.therapy-goals li::marker{color:#805f29}
+.therapy-goals figcaption{margin-top:20px;font:italic 18px/1.5 var(--serif);color:#674c24}
