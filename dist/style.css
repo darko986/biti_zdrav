@@ -67,7 +67,7 @@
 .button:disabled{opacity:.6;cursor:not-allowed;transform:none}
 @media(max-width:760px){.topic-grid{grid-template-columns:1fr}}
 
-.support-company,.therapy-goals{background:linear-gradient(105deg,#e5d4a6,#f4ecd9)}
+.support-company,.therapy-goals,.portrait-quote{background:linear-gradient(105deg,#e5d4a6,#f4ecd9)}
 @media(max-width:760px){.support-card.support-company{padding-inline:14px}}
 .bio-detail h3{font:23px/1.3 var(--serif);margin:24px 0 10px}.bio-detail p{font-size:16px;line-height:1.75;max-width:65ch;padding:0;margin:0 0 16px}
 
@@ -140,7 +140,7 @@
   .service-details summary{gap:4px;overflow-wrap:anywhere}
 }
 
-.portrait-quote{max-width:480px;margin:24px 0 0;padding-inline-start:18px;border-inline-start:2px solid #b6974c;color:#805f29;font:italic clamp(19px,1.45vw,23px)/1.5 var(--serif)}
+.portrait-quote{max-width:480px;margin:24px 0 0;padding:18px;border-inline-start:3px solid #b6974c;color:#674c24;font:italic clamp(19px,1.45vw,23px)/1.5 var(--serif)}
 .portrait-quote blockquote{margin:0}
 .portrait-quote figcaption{margin-top:10px;font-size:.9em}
 @media(max-width:760px){.portrait-quote{max-width:360px}}
