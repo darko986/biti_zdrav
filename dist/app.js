@@ -20,7 +20,7 @@ function showInfo(kind) {
     title.textContent = 'Vaša privatnost';
     content.innerHTML = '<p>Obrazac za dogovor priprema poruku samo na ovoj stranici. Kontakt podaci i odabrani termin ne šalju se serveru i ne spremaju u lokalnu pohranu. Ne tražimo zdravstvene podatke. Sajt nema analitiku ni oglasne alate.</p><p>Kopiranje stavlja pripremljeni tekst u vaš međuspremnik. Ako je email kontakt dostupan, email link otvara vašu aplikaciju za poštu; poruku pregledate i sami šaljete. Instagram i Facebook otvaraju druge sajtove na kojima važe njihova pravila privatnosti.</p><p>Fotografije i elementi stranice učitavaju se s istog sajta. Hosting servis može obrađivati tehničke podatke potrebne za isporuku stranice. Za informacije o obradi podataka u savjetovalištu obratite se Nebojši Šajinoviću.</p>';
   } else {
-    title.textContent = 'Dođite onako kako jeste.';
+    title.textContent = 'Budite ono što jeste.';
     content.innerHTML = '<p>Ne postoji savršena priprema za prvi razgovor. Ako vam pomaže, možete razmisliti o nekoliko pitanja:</p><ul><li>Šta me je navelo da potražim razgovor baš sada?</li><li>Šta bih želio ili željela bolje razumjeti?</li><li>Šta mi je važno da znam o načinu rada?</li></ul><p>Ove odgovore možete zadržati za sebe do susreta. Nema potrebe da šaljete osjetljive detalje u početnom upitu.</p>';
   }
   dialog.showModal();
