@@ -40,7 +40,14 @@ Dodana je sekcija predstavljanja savjetovališta i oznaka „Psiholog”, prema 
 
 Kvalifikacije terapeuta, terapijske metode, cijene, trajanje, dostupnost termina, aktuelni izbor platforme za online susrete, saglasnosti za maloljetnike i pravila privatnosti. Fotografiju zamijeniti autentičnom kada bude dostupna. Telefon je aktivan tel link, a Facebook vodi na korisnikov potvrđeni profil. Nema izmišljenih biografija, recenzija ili automatskog zakazivanja. Obrazac priprema prijedlog za naknadni dogovor.
 
-Radna verzija ima `noindex,nofollow`. Prije javnog lansiranja treba potvrditi poslovne podatke, kontakt i privatnost, zatim ukloniti noindex, dodati canonical i sitemap za konačni domen. Nije aktiviran backend ili slanje podataka.
+Produkcijska početna stranica je `dist/index.html`. U GitHub Settings → Pages odaberite GitHub Actions. Ručni postupak Publish BITI ZDRAV objavljuje sadržaj direktorijuma `dist/`. Kanonski domen je https://bitizdrav.org/. U istom direktorijumu su politika privatnosti, robots.txt i sitemap.xml.
+
+### Potvrde vlasnika prije objave
+
+- Potvrditi pravni identitet i kontakt kontrolora podataka, svrhe i pravni osnov za obradu primljenih poruka, primaoce, mjesto obrade, rokove čuvanja, prava i postupak za zahtjeve korisnika. Dopuniti politiku privatnosti prema stvarnoj praksi.
+- Provjeriti primaoca emaila i aktuelne društvene profile, cijene, trajanje, ponuđene platforme i dostupnost. Potvrditi saglasnosti za maloljetnike i granice povjerljivosti.
+- Potvrditi aktuelnost vremenski promjenljivih biografskih podataka, dozvole za objavu fotografija, citata i porodičnih podataka te odobrenje za javno indeksiranje.
+
 
 Instalacija i prvi prompt nalaze se u `agent-package/README.md`. Paket ne zahtijeva da vaš klijent ima UI birač agenata. Format prilagođenog agenta: https://learn.chatgpt.com/docs/agent-configuration/subagents.
 

@@ -16,19 +16,13 @@ document.querySelectorAll('[data-audience]').forEach(link => link.addEventListen
 const dialog = document.querySelector('#info-dialog');
 const title = document.querySelector('#dialog-title');
 const content = document.querySelector('#dialog-content');
-function showInfo(kind) {
-  if (kind === 'privacy') {
-    title.textContent = 'Vaša privatnost';
-    content.innerHTML = '<p>Obrazac za dogovor priprema poruku samo na ovoj stranici. Kontakt podaci i odabrani termin ne šalju se serveru i ne spremaju u lokalnu pohranu. Ne tražimo zdravstvene podatke. Sajt nema analitiku ni oglasne alate.</p><p>Kopiranje stavlja pripremljeni tekst u vaš međuspremnik. Izbor pisma se pamti na vašem uređaju. Ako je email kontakt dostupan, email link otvara vašu aplikaciju za poštu; poruku pregledate i sami šaljete. Instagram i Facebook otvaraju druge sajtove na kojima važe njihova pravila privatnosti.</p><p>Fotografije i elementi stranice učitavaju se s istog sajta. Hosting servis može obrađivati tehničke podatke potrebne za isporuku stranice. Za informacije o obradi podataka u savjetovalištu obratite se Nebojši Šajinoviću.</p>';
-  } else {
-    title.textContent = 'Budite ono što jeste.';
-    content.innerHTML = '<p>Ne postoji savršena priprema za prvi razgovor. Ako vam pomaže, možete razmisliti o nekoliko pitanja:</p><ul><li>Šta me je navelo da potražim razgovor baš sada?</li><li>Šta bih želio ili željela bolje razumjeti?</li><li>Šta mi je važno da znam o načinu rada?</li></ul><p>Ove odgovore možete zadržati za sebe do susreta. Nema potrebe da šaljete osjetljive detalje u početnom upitu.</p>';
-  }
+function showPreparation() {
+  title.textContent = 'Budite ono što jeste.';
+  content.innerHTML = '<p>Ne postoji savršena priprema za prvi razgovor. Ako vam pomaže, možete razmisliti o nekoliko pitanja:</p><ul><li>Šta me je navelo da potražim razgovor baš sada?</li><li>Šta bih želio ili željela bolje razumjeti?</li><li>Šta mi je važno da znam o načinu rada?</li></ul><p>Ove odgovore možete zadržati za sebe do susreta. Nema potrebe da šaljete osjetljive detalje u početnom upitu.</p>';
   renderScript(dialog);
   dialog.showModal();
 }
-document.querySelector('#prepare-button').addEventListener('click', () => showInfo('prepare'));
-document.querySelector('#privacy-button').addEventListener('click', () => showInfo('privacy'));
+document.querySelector('#prepare-button').addEventListener('click', showPreparation);
 dialog.querySelectorAll('.close-button, .dialog-done').forEach(button => button.addEventListener('click', () => dialog.close()));
 dialog.addEventListener('click', event => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if(event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close(); } });
 
@@ -66,7 +60,6 @@ if (practiceEmail) {
   const contactEmail = document.querySelector('#contact-email');
   contactEmail.href = `mailto:${practiceEmail}`;
   contactEmail.textContent = practiceEmail;
-  document.querySelector('#prepare-message').textContent = 'Otvori pripremljeni email';
   contactEmail.hidden = false;
   appointmentEmail.hidden = false;
   document.querySelector('#delivery-help').textContent = 'Otvorite pripremljenu poruku u svojoj email aplikaciji, pregledajte je i pošaljite. Možete je i kopirati. Otvaranje emaila ne šalje poruku niti rezerviše termin.';
@@ -99,12 +92,9 @@ appointmentForm.addEventListener('submit', event => {
   appointmentForm.elements.phone.setCustomValidity(digits.length < 6 ? inScript('Unesite broj telefona s pozivnim brojem.') : '');
   if (!appointmentForm.reportValidity()) return;
   updateAppointmentDraft();
-  if (practiceEmail) {
-    window.location.href = appointmentEmail.href;
-  }
   appointmentResult.hidden = false;
   appointmentStatus.textContent = 'Poruka je pripremljena. Još nije poslata; termin čeka dogovor.';
-    renderScript(appointmentStatus);
+  renderScript(appointmentStatus);
   appointmentMessage.focus();
   appointmentMessage.setSelectionRange(0, 0);
   appointmentMessage.scrollTop = 0;

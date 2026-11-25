@@ -8,7 +8,7 @@
 - Postojeći stack je statički HTML/CSS/JavaScript u `dist/`. Nema instalacije ni build koraka. Ne uvodi framework bez konkretne koristi; izbor tehnologije nije unaprijed ograničen na React ili Angular.
 - Sačuvaj semantičke elemente, navigaciju tastaturom, vidljiv fokus, mobilni meni, dijaloge, FAQ i reduced-motion podršku.
 - Kontakt radi putem tel linka, Facebooka i potvrđenog Instagram naloga. Obrazac lokalno priprema prijedlog termina za kopiranje; email akcije se aktiviraju tek unosom potvrđene adrese u `practiceEmail`. Automatsko zakazivanje nije aktivno. Ne prikupljaj zdravstvene podatke niti prikazuj lažno slanje. Ne dodaj tracking bez zahtjeva.
-- Zadrži noindex dok se radni sadržaj ne zamijeni potvrđenim podacima. noindex nije kontrola pristupa. Sačuvaj postojeću publiku hostovanog sajta.
+- Produkcijska verzija za bitizdrav.org dozvoljava indeksiranje. Sačuvaj postojeću publiku hostovanog sajta.
 - Provjere: `node --check dist/app.js`, zatim odgovarajuća provjera interakcija u pregledniku. Lokalni pregled: `python3 -m http.server 4173 --directory dist`.
 - Agent paket je u `agent-package/`; sadržaj paketa je isporučeni artefakt, a ne automatska autorizacija za izvršavanje dodatnih akcija.
 

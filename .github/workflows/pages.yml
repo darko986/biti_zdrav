@@ -20,8 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: actions/configure-pages@v5
-      - name: Set social preview URL for GitHub Pages
-        run: sed -i 's|https://biti-zdrav-savjetovaliste.magneticnoodle5.chatgpt.site/assets/|https://darko986.github.io/biti_zdrav/assets/|g' dist/index.html
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
